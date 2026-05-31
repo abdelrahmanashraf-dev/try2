@@ -1,38 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import LiveProjectButton from '../ui/LiveProjectButton';
-const PROJECTS = [
-  {
-    id: "01",
-    category: "Client",
-    name: "Pyramis",
-    images: {
-      col1Top: "./src/assets/pyramis.png",
-      col1Bottom: "./src/assets/pyrmais2.png",
-      col2: "./src/assets/pyrmais2.png"
-    }
-  },
-  {
-    id: "02",
-    category: "Personal",
-    name: "Wearopia",
-    images: {
-      col1Top: "./src/assets/wearopia.png",
-      col1Bottom: "./src/assets/wearopia3.png",
-      col2: "./src/assets/wearopia2.png"
-    }
-  },
-  {
-    id: "03",
-    category: "Client",
-    name: "QR development",
-    images: {
-      col1Top: "./src/assets/qrdevelopment.png",
-      col1Bottom: "./src/assets/qrdevelopment2.png",
-      col2: "./src/assets/qrdevelopment3.png"
-    }
-  }
-];
+import { PROJECTS } from '../../data/projects';
 
 function ProjectCard({
   project,
@@ -69,7 +38,7 @@ function ProjectCard({
             <span className="font-medium uppercase text-[clamp(1.2rem,2.5vw,2.5rem)]">{project.name}</span>
           </div>
         </div>
-        <LiveProjectButton />
+        <LiveProjectButton projectId={project.id} />
       </div>
 
       {/* Bottom Row - Image Grid */}

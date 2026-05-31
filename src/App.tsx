@@ -1,20 +1,15 @@
-import HeroSection from './components/sections/HeroSection';
-import MarqueeSection from './components/sections/MarqueeSection';
-import AboutSection from './components/sections/AboutSection';
-import ServicesSection from './components/sections/ServicesSection';
-import ProjectsSection from './components/sections/ProjectsSection';
-import ContactSection from './components/sections/ContactSection';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CaseStudyPage from './pages/CaseStudyPage';
 
 function App() {
   return (
-    <main className="w-full min-h-screen overflow-x-clip bg-[#0C0C0C]">
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ContactSection />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/:id" element={<CaseStudyPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
