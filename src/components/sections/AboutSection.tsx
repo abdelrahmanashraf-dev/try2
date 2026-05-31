@@ -2,6 +2,7 @@ import FadeIn from '../animations/FadeIn';
 import AnimatedText from '../animations/AnimatedText';
 import ContactButton from '../ui/ContactButton';
 import ResumeButton from '../ui/ResumeButton';
+import threeDImg from '../../assets/3d.png';
 
 export default function AboutSection() {
   return (
@@ -19,8 +20,8 @@ export default function AboutSection() {
       </FadeIn>
 
       <FadeIn delay={0.15} x={80} y={0} duration={0.9} className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] z-0">
-        <img src="./src/assets/3d.png"
-          className="w-[120px] sm:w-[160px] md:w-[210px] object-contain" alt="Lego" />
+        <img src={threeDImg}
+          className="w-[120px] sm:w-[160px] md:w-[210px] object-contain" alt="Figma" />
       </FadeIn>
 
       <FadeIn delay={0.3} x={80} y={0} duration={0.9} className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] z-0">

@@ -2,6 +2,7 @@ import FadeIn from '../animations/FadeIn';
 import Magnet from '../animations/Magnet';
 import ContactButton from '../ui/ContactButton';
 import ResumeButton from '../ui/ResumeButton';
+import herooImg from '../../assets/Heroo.png';
 
 export default function HeroSection() {
   return (
@@ -30,8 +31,8 @@ export default function HeroSection() {
       <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none">
         <Magnet padding={150} strength={3} className="pointer-events-auto w-full h-full">
           <img
-            src="/src/assets/Heroo.png"
-            alt="Jack 3D Portrait"
+            src={herooImg}
+            alt="Abdelrahman 3D Portrait"
             className="w-full h-auto object-contain"
           />
         </Magnet>
