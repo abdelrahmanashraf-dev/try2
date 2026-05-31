@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section className="h-screen flex flex-col relative overflow-clip">
       {/* Navbar */}
       <FadeIn delay={0} y={-20} className="w-full">
-        <nav className="flex justify-between px-6 md:px-10 pt-6 md:pt-8 text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]">
+        <nav className="flex flex-wrap justify-between gap-2 px-6 md:px-10 pt-6 md:pt-8 text-[#D7E2EA] font-medium uppercase tracking-wider text-[11px] sm:text-xs md:text-base lg:text-lg">
           {['About', 'Services', 'Projects', 'Contact'].map((link) => (
             <a key={link} href={`#${link.toLowerCase()}`} className="hover:opacity-70 transition-opacity duration-200">
               {link}
@@ -20,7 +20,7 @@ export default function HeroSection() {
       {/* Heading */}
       <div className="flex-1 flex flex-col justify-center items-center overflow-hidden">
         <FadeIn delay={0.15} y={40} className="w-full text-center">
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[15vw] sm:text-[15vw] md:text-[16vw] lg:text-[9vw] mt-6 sm:mt-4 md:-mt-5">
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-normal md:whitespace-nowrap w-full text-[13vw] sm:text-[11vw] md:text-[8vw] lg:text-[7vw] mt-6 sm:mt-4 md:-mt-5 px-4 md:px-0">
             Hi, i&apos;m Abdelrahman
           </h1>
         </FadeIn>
