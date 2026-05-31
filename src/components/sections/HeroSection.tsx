@@ -28,7 +28,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Portrait */}
-      <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] bottom-0 pointer-events-none">
+      <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] bottom-16 sm:bottom-0 pointer-events-none">
         <Magnet padding={150} strength={3} className="pointer-events-auto w-full h-full">
           <img
             src={herooImg}

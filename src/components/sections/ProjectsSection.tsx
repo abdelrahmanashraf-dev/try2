@@ -42,27 +42,27 @@ function ProjectCard({
       </div>
 
       {/* Bottom Row - Image Grid */}
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 h-full">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 h-full mt-4 sm:mt-0">
         {/* Left Column (40%) */}
         <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full sm:w-[40%]">
           <img
             src={project.images.col1Top}
             alt={`${project.name} preview 1`}
-            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px] h-[clamp(130px,16vw,230px)]"
+            className="w-full object-cover rounded-[30px] sm:rounded-[50px] md:rounded-[60px] h-[200px] sm:h-[clamp(130px,16vw,230px)]"
           />
           <img
             src={project.images.col1Bottom}
             alt={`${project.name} preview 2`}
-            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px] h-[clamp(160px,22vw,340px)]"
+            className="w-full object-cover rounded-[30px] sm:rounded-[50px] md:rounded-[60px] h-[250px] sm:h-[clamp(160px,22vw,340px)]"
           />
         </div>
 
         {/* Right Column (60%) */}
-        <div className="w-full sm:w-[60%] h-full">
+        <div className="w-full sm:w-[60%] sm:h-full">
           <img
             src={project.images.col2}
             alt={`${project.name} preview 3`}
-            className="w-full h-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px] min-h-[300px]"
+            className="w-full object-cover rounded-[30px] sm:rounded-[50px] md:rounded-[60px] h-[300px] sm:h-full sm:min-h-[300px]"
           />
         </div>
       </div>
