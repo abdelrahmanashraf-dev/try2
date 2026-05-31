@@ -39,11 +39,17 @@ export default function CaseStudyPage() {
       {/* Header */}
       <FadeIn y={30} className="max-w-5xl mb-16 sm:mb-24">
         <span className="text-white/50 font-light uppercase tracking-widest text-sm mb-4 block">
-          {project.category} / {project.id}
+          {project.tag || project.category} / {project.id}
         </span>
         <h1 className="text-[clamp(3rem,8vw,100px)] font-black uppercase leading-none tracking-tight mb-8">
           {project.name}
         </h1>
+        
+        {project.pitch && (
+          <p className="text-2xl sm:text-3xl font-medium mb-8 text-white/90 max-w-4xl leading-tight">
+            {project.pitch}
+          </p>
+        )}
         
         <div className="flex flex-col sm:flex-row gap-8 sm:gap-16 border-t border-white/10 pt-8 mt-12">
           {project.role && (
@@ -60,13 +66,30 @@ export default function CaseStudyPage() {
           )}
         </div>
         
-        {project.description && (
-          <div className="mt-12 max-w-2xl">
-            <p className="text-lg sm:text-xl font-light leading-relaxed opacity-80">
-              {project.description}
-            </p>
-          </div>
-        )}
+        <div className="mt-12 flex flex-col md:flex-row gap-12 md:gap-24">
+          {project.description && (
+            <div className="flex-1 max-w-2xl">
+              <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">Overview</h3>
+              <p className="text-lg sm:text-xl font-light leading-relaxed opacity-80">
+                {project.description}
+              </p>
+            </div>
+          )}
+
+          {project.corePoints && project.corePoints.length > 0 && (
+            <div className="flex-1">
+              <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">Core Contributions</h3>
+              <ul className="flex flex-col gap-3">
+                {project.corePoints.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg font-light opacity-90">
+                    <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#D7E2EA] shrink-0"></span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </FadeIn>
 
       {/* Masonry / Grid Images */}

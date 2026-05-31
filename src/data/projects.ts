@@ -19,46 +19,70 @@ export type Project = {
   description?: string;
   role?: string;
   timeline?: string;
+  pitch?: string;
+  corePoints?: string[];
+  tag?: string;
 };
 
 export const PROJECTS: Project[] = [
   {
     id: "01",
-    category: "Client",
+    category: "Product Design",
+    tag: "PRODUCT DESIGN • AI ECOSYSTEM",
     name: "Pyramis",
-    description: "A comprehensive brand identity and digital presence overhaul for Pyramis, focusing on modern aesthetics and streamlined user experiences.",
-    role: "Lead UI/UX Designer",
-    timeline: "3 Months",
+    pitch: "An all-in-one tourism platform for Egypt with an AI trip planner, hotel bookings, and car rentals.",
+    description: "Led product design and front-end alignment, simplifying user journeys into a modern booking experience.",
+    corePoints: [
+      "End-to-End Product Design (UX Research & IA)",
+      "Multi-service Dashboard Design",
+      "Bridging design and engineering for a Vue.js/.NET stack"
+    ],
+    role: "Lead UI/UX Designer and Frontend Developer",
+    timeline: "1 Month",
     images: {
-      col1Top: pyramisImg,
-      col1Bottom: pyramis2Img,
-      col2: pyramis2Img
+      col1Top: pyramis2Img,
+      col1Bottom: pyramisImg,
+      col2: pyramisImg
     }
   },
   {
     id: "02",
-    category: "Personal",
+    category: "E-Commerce",
+    tag: "E-COMMERCE • UI/UX DESIGN",
     name: "Wearopia",
-    description: "An innovative e-commerce concept for a fashion brand, emphasizing immersive product discovery and smooth checkout flows.",
+    pitch: "A modern e-commerce platform for a contemporary clothing brand, focused on intuitive product discovery and a friction-free checkout.",
+    description: "A modern e-commerce platform for a contemporary clothing brand, focused on intuitive product discovery and a friction-free checkout.",
+    corePoints: [
+      "Conversion funnel optimization",
+      "Balance between brand identity and clean UI",
+      "Minimalist aesthetics for product-first impact"
+    ],
     role: "Product Designer",
-    timeline: "2 Months",
+    timeline: "2 weeks",
     images: {
-      col1Top: wearopiaImg,
+      col1Top: wearopia2Img,
       col1Bottom: wearopia3Img,
-      col2: wearopia2Img
+      col2: wearopiaImg
     }
   },
   {
     id: "03",
-    category: "Client",
-    name: "QR development",
-    description: "A functional and sleek dashboard interface designed to help users generate, track, and manage QR codes effectively.",
+    category: "Web Design",
+    tag: "WEB DESIGN • B2B SAAS",
+    name: "QR Development",
+    pitch: "High-converting marketing and service pages for a tech-driven SaaS company, showcasing corporate capabilities and software solutions.",
+    description: "High-converting marketing and service pages for a tech-driven SaaS company, showcasing corporate capabilities and software solutions.",
+    corePoints: [
+      "High-converting B2B information architecture",
+      "Visual hierarchy and strategic CTAs",
+      "Production-ready component thinking and frontend feasibility"
+    ],
     role: "UI/UX Designer",
-    timeline: "1.5 Months",
+    timeline: "1 week",
     images: {
-      col1Top: qrdevelopmentImg,
+      col1Top: qrdevelopment3Img,
       col1Bottom: qrdevelopment2Img,
-      col2: qrdevelopment3Img
+      col2: qrdevelopmentImg
     }
   }
 ];
