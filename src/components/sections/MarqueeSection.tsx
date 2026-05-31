@@ -32,8 +32,8 @@ export default function MarqueeSection() {
       const sectionTop = sectionRef.current.offsetTop;
       const offset = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
 
-      row1Ref.current.style.transform = `translateX(${offset - 200}px)`;
-      row2Ref.current.style.transform = `translateX(${-(offset - 200)}px)`;
+      row1Ref.current.style.transform = `translateX(${-(offset * 1.5)}px)`;
+      row2Ref.current.style.transform = `translateX(${offset * 1.5 - 3000}px)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,7 +51,7 @@ export default function MarqueeSection() {
           src={src}
           alt={`Marquee item ${i}`}
           loading="lazy"
-          className="w-[420px] h-[270px] rounded-2xl object-cover shrink-0 pointer-events-none"
+          className="w-[280px] h-[180px] sm:w-[350px] sm:h-[220px] md:w-[420px] md:h-[270px] rounded-2xl object-cover shrink-0 pointer-events-none"
         />
       ))}
     </div>

@@ -23,21 +23,30 @@ export default function Magnet({
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMove = (e: MouseEvent | TouchEvent) => {
       if (!ref.current) return;
+      
+      let clientX, clientY;
+      if ('touches' in e) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else {
+        clientX = e.clientX;
+        clientY = e.clientY;
+      }
       
       const { left, top, width, height } = ref.current.getBoundingClientRect();
       const centerX = left + width / 2;
       const centerY = top + height / 2;
       
-      const distanceX = Math.abs(e.clientX - centerX);
-      const distanceY = Math.abs(e.clientY - centerY);
+      const distanceX = Math.abs(clientX - centerX);
+      const distanceY = Math.abs(clientY - centerY);
       
       if (distanceX < (width / 2 + padding) && distanceY < (height / 2 + padding)) {
         setIsActive(true);
         setPosition({
-          x: (e.clientX - centerX) / strength,
-          y: (e.clientY - centerY) / strength
+          x: (clientX - centerX) / strength,
+          y: (clientY - centerY) / strength
         });
       } else {
         setIsActive(false);
@@ -45,8 +54,20 @@ export default function Magnet({
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    const handleEnd = () => {
+      setIsActive(false);
+      setPosition({ x: 0, y: 0 });
+    };
+
+    window.addEventListener('mousemove', handleMove);
+    window.addEventListener('touchmove', handleMove);
+    window.addEventListener('touchend', handleEnd);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchend', handleEnd);
+    };
   }, [padding, strength]);
 
   return (
