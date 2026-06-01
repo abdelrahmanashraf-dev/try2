@@ -119,18 +119,14 @@ export default function CaseStudyPage() {
       {/* Next Steps / Footer CTA */}
       <FadeIn delay={0.3} className="mt-32 text-center border-t border-white/10 pt-20">
         <h2 className="text-3xl sm:text-5xl font-black uppercase mb-8">Loved this project?</h2>
-        <Link 
-          to="/#contact" 
-          onClick={(e) => {
-            // Need to manually handle this since we're using a router and want to scroll to a section on the home page
-            if (window.location.pathname !== '/') {
-              window.location.href = '/#contact';
-            }
-          }}
+        <a 
+          href={`https://wa.me/201115719908?text=Hello%20Abdelrahman,%20I'm%20interested%20in%20discussing%20the%20${project.id}%20project!`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block rounded-full bg-white text-[#0C0C0C] font-bold uppercase tracking-widest px-10 py-5 hover:scale-105 transition-transform"
         >
           Let's work together
-        </Link>
+        </a>
       </FadeIn>
     </main>
   );

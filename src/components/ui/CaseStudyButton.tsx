@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-export default function LiveProjectButton({ projectId }: { projectId: string }) {
+export default function CaseStudyButton({ projectId }: { projectId: string }) {
   return (
-    <Link 
+    <Link
       to={`/project/${projectId}`}
       className="inline-flex items-center justify-center rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base hover:bg-[#D7E2EA]/10 transition-colors whitespace-nowrap"
     >

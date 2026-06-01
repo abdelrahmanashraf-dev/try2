@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
-import LiveProjectButton from '../ui/LiveProjectButton';
+import CaseStudyButton from '../ui/CaseStudyButton';
 import { PROJECTS } from '../../data/projects';
 
 function ProjectCard({
@@ -38,7 +38,7 @@ function ProjectCard({
             <span className="font-medium uppercase text-[clamp(1.2rem,2.5vw,2.5rem)]">{project.name}</span>
           </div>
         </div>
-        <LiveProjectButton projectId={project.id} />
+        <CaseStudyButton projectId={project.id} />
       </div>
 
       {/* Bottom Row - Image Grid */}
