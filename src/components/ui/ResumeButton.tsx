@@ -1,8 +1,15 @@
+import { track } from '@vercel/analytics';
+
 export default function ResumeButton() {
+  const handleDownload = () => {
+    track('Download CV');
+  };
+
   return (
     <a
       href="/resume.pdf"
       download
+      onClick={handleDownload}
       className="inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base font-medium uppercase tracking-widest text-[#D7E2EA] transition-all hover:bg-white/10 active:scale-95 border-2 border-white/20 hover:border-white/40"
     >
       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
